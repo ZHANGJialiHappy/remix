@@ -1,3 +1,5 @@
+import stylesheet from "~/tailwind.css";
+
 import {
   Links,
   LiveReload,
@@ -25,3 +27,9 @@ export default function App() {
     </html>
   );
 }
+
+export const links = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
+
+
