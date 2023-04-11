@@ -2,13 +2,12 @@ import { Link } from "@remix-run/react";
 
 export default function Index() {
   return (
-    <main id="content">
+    <main className="flex justify-center items-center text-center">
+      <div>
       <h1>A better way of keeping track of your notes!</h1>
       <p>Try our early beta and never loose track of your notes again!</p>
-      <p id="cta">
-      <Link to="/notes">Try Now!</Link>
-      </p>
-      <button className="btn">Button</button>
+      <Link to="/notes"><button className="btn">Try now</button></Link>
+      </div>
     </main>
   );
 }
