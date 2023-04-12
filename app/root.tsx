@@ -1,5 +1,3 @@
-import stylesheet from "~/tailwind.css";
-
 import {
   Links,
   LiveReload,
@@ -8,6 +6,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+
+import MainNavigation from "./components/MainNavigation";
+import stylesheet from "~/tailwind.css";
 
 export default function App() {
   return (
@@ -19,6 +20,9 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <header className="flex m-5">
+          <MainNavigation/>
+        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />

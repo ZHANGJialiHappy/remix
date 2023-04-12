@@ -2,8 +2,7 @@ import background from '../pic/background.jpeg';
 
 function NewNote() {
   return (
-
-      <div className="card lg:card-side bg-base-50 shadow-xl">
+      <form className="card lg:card-side bg-base-50 shadow-xl">
         <figure><img className="h-96" src={background} alt="Notes" /></figure>
         <div className="card-body relative">
           <label className="label">
@@ -18,10 +17,7 @@ function NewNote() {
             <button className="btn btn-outline btn-warning">Add note</button>
           </div>
         </div>
-      </div>
-
-
-
+      </form>
   )
 }
 
