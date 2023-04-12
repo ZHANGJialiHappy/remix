@@ -1,4 +1,4 @@
-import background from '../pic/background.jpeg';
+import background from '../pic/sidePic.jpeg';
 
 function NewNote() {
   return (

@@ -20,7 +20,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <header className="flex m-5">
+        <header>
           <MainNavigation/>
         </header>
         <Outlet />
