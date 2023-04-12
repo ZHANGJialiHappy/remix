@@ -1,17 +1,28 @@
+import background from '../pic/background.jpeg';
+
 function NewNote() {
   return (
-    <div className="form-control w-full max-w-xs">
-  <label className="label">
-    <span className="label-text">Title</span>
-  </label>
-  <input type="text" placeholder="Type here" className="input input-bordered input-warning w-full max-w-xs" />
-  <label className="label">
-    <span className="label-text">Content</span>
-  </label>
-  <textarea className="textarea textarea-warning" placeholder="Bio"></textarea>
-  <button className="btn btn-warning my-5">Add note</button>
-</div>
+
+      <div className="card lg:card-side bg-base-50 shadow-xl">
+        <figure><img className="h-96" src={background} alt="Notes" /></figure>
+        <div className="card-body relative">
+          <label className="label">
+            <span className="label-text">Title</span>
+          </label>
+          <input type="text" placeholder="Type here" className="input input-bordered input-warning w-80 max-w-xs" />
+          <label className="label">
+            <span className="label-text">Content</span>
+          </label>
+          <textarea className="textarea textarea-warning w-full" placeholder="Write your notes here&#10;No matter how much content you want to write"></textarea>
+          <div className="card-actions justify-end absolute bottom-8 right-8">
+            <button className="btn btn-warning">Add note</button>
+          </div>
+        </div>
+      </div>
+
+
+
   )
 }
 
-export default NewNote
+export default NewNote;
