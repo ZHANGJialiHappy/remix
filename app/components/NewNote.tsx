@@ -15,7 +15,7 @@ function NewNote() {
           </label>
           <textarea className="textarea textarea-warning w-full" placeholder="Write your notes here&#10;No matter how much content you want to write"></textarea>
           <div className="card-actions justify-end absolute bottom-8 right-8">
-            <button className="btn btn-warning">Add note</button>
+            <button className="btn btn-outline btn-warning">Add note</button>
           </div>
         </div>
       </div>
