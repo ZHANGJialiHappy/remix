@@ -23,10 +23,11 @@ function NewNote() {
 
   const addNote = (e: React.SyntheticEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    debugger;
     if ((!title || /^\s*$/.test(title)) || (!content || /^\s*$/.test(content))) {
       return
     }
-    const newNote= { title, content, id: Math.random() }
+    const newNote = { title, content, id: Math.random() }
     const newNoteList = [newNote, ...notes];
     setNotes(newNoteList);
     setTitle("");
@@ -34,28 +35,33 @@ function NewNote() {
   }
 
   return (
+
+    <>
       <form className="card lg:card-side bg-base-50 shadow-xl" onSubmit={addNote}>
         <figure><img className="h-96" src={background} alt="Notes" /></figure>
         <div className="card-body relative">
           <label className="label">
             <span className="label-text">Title</span>
           </label>
-          <input type="text" placeholder="Type here" name="TaskName" className="input input-bordered input-warning w-80 max-w-xs" onChange={handleChange}/>
+          <input type="text" placeholder="Type here" name="Title" className="input input-bordered input-warning w-80 max-w-xs" onChange={handleChange} />
           <label className="label">
             <span className="label-text">Content</span>
           </label>
-          <textarea
-          name="Content"
-          placeholder="Write your notes here&#10;No matter how much content you want to write"
-          className="textarea textarea-warning w-full"></textarea>
+          <input
+            name="Content"
+            placeholder="Write your notes here&#10;No matter how much content you want to write"
+            className="textarea textarea-warning w-full"
+            onChange={handleChange}
+            />
           <div className="card-actions justify-end absolute bottom-8 right-8">
             <button className="btn btn-outline btn-warning">Add note</button>
           </div>
-          <div>
-          <NoteList notes={notes}/>
-          </div>
         </div>
       </form>
+      <div>
+        <NoteList notes={notes} />
+      </div>
+    </>
   )
 }
 

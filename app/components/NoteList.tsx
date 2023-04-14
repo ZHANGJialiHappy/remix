@@ -8,7 +8,7 @@ function NoteList({notes}: Props) {
     return (
         <div>
             {notes.map((note, key: number) => {
-                return <Note/>;
+                return <Note note={note} key={note.id}/>;
             })}
         </div>
     )
