@@ -1,11 +1,11 @@
+import { NoteState } from '~/routes/notes';
 import daisy from '../pic/daisy.png';
-import { NoteState } from './NewNote';
 
 interface Props {
   note: NoteState
 }
 
-function Note({note}:  Props) {
+function NoteCard({note}:  Props) {
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl image-full">
@@ -14,7 +14,7 @@ function Note({note}:  Props) {
     <h2 className="card-title">{note.title}</h2>
     <p>{note.content}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">see more</button>
+      <button className="btn btn-outline btn-warning">see more</button>
     </div>
   </div>
 </div>
@@ -22,4 +22,4 @@ function Note({note}:  Props) {
   )
 }
 
-export default Note;
+export default NoteCard;
