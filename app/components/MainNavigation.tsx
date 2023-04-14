@@ -2,7 +2,7 @@ import { NavLink } from "@remix-run/react"
 
 function MainNavigation() {
     return (
-        <nav className="navbar bg-yellow-200 justify-center">
+        <nav className="navbar bg-yellow-100 justify-center">
             <NavLink to="/"
                 className={({ isActive, isPending }) =>
                     isPending ? " btn btn-ghost normal-case text-xl text-yellow-200" : isActive ? "btn btn-ghost normal-case text-xl text-yellow-400" : "btn btn-ghost normal-case text-xl"}>
