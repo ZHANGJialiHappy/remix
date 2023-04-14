@@ -33,7 +33,8 @@ function NotesPage() {
     setContent("");
   }
   return (
-    <main className="flex m-5 justify-center items-center text-center" >
+    <main  >
+      <div className="flex m-5 justify-center items-center text-center">
       <form className="flex justify-center card lg:card-side bg-base-50 shadow-xl" onSubmit={addNote}>
         <figure><img className="h-96" src={background} alt="Notes"/></figure>
         <div className="card-body relative">
@@ -62,10 +63,11 @@ function NotesPage() {
           </div>
         </div>
       </form>
+
+      </div>
       <div>
         <NoteList notes={notes} />
       </div>
-
     </main>
   )
 }

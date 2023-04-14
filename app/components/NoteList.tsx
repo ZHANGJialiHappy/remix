@@ -7,7 +7,7 @@ interface Props {
 }
 function NoteList({notes}: Props) {
     return (
-        <div className="grid gap-10 auto-cols-[minmax(0,_2fr)] ml-10">
+        <div className="grid gap-10 grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] ml-10">
             {notes.map((note) => {
                 return <NoteCard note={note} key={note.id}/>;
             })}
