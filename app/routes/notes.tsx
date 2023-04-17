@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import NoteList from '~/components/NoteList';
 import background from '../pic/sidePic.jpeg';
 
@@ -12,9 +12,13 @@ function NotesPage() {
   const [content, setContent] = useState<string>("");
   const [notes, setNotes] = useState<NoteState[]>([]);
 
+  useEffect(() => {
+    const notesInLocalStorage = JSON.parse(localStorage.getItem("noteList") || "[]");
+    setNotes(notesInLocalStorage);
+  }, [])
+
   const addNote = (e: React.SyntheticEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    debugger;
     if ((!title || /^\s*$/.test(title)) || (!content || /^\s*$/.test(content))) {
       return
     }
@@ -23,11 +27,14 @@ function NotesPage() {
     setNotes(newNoteList);
     setTitle("");
     setContent("");
+    localStorage.setItem('noteList', JSON.stringify(newNoteList));
   }
 
   const deleteNote = (noteId: string): void => {
     const removeNotes = notes.filter(note => note.id !== noteId)
     setNotes(removeNotes);
+    localStorage.setItem('noteList', JSON.stringify(removeNotes));
+
   }
   return (
     <main>
@@ -55,14 +62,11 @@ function NotesPage() {
             className="textarea textarea-warning w-full"
             onChange={(event: ChangeEvent<HTMLTextAreaElement>): void => {setContent(event.target.value)}} 
             value={content}></textarea>
-            {/* textarea */}
-
           <div className="card-actions justify-end absolute bottom-8 right-8">
             <button className="btn btn-outline btn-warning">Add note</button>
           </div>
         </div>
       </form>
-
       </div>
       <div>
         <NoteList notes={notes} deleteNote={deleteNote}/>
