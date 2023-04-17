@@ -18,14 +18,19 @@ function NotesPage() {
     if ((!title || /^\s*$/.test(title)) || (!content || /^\s*$/.test(content))) {
       return
     }
-    const newNote = { title, content, id: ` ${new Date()}` }
+    const newNote = { title, content, id: `${new Date()}` }
     const newNoteList = [newNote, ...notes];
     setNotes(newNoteList);
     setTitle("");
     setContent("");
   }
+
+  const deleteNote = (noteId: string): void => {
+    const removeNotes = notes.filter(note => note.id !== noteId)
+    setNotes(removeNotes);
+  }
   return (
-    <main  >
+    <main>
       <div className="flex m-5 justify-center items-center text-center">
       <form className="flex justify-center card lg:card-side bg-base-50 shadow-xl" onSubmit={addNote}>
         <figure><img className="h-96" src={background} alt="Notes"/></figure>
@@ -60,7 +65,7 @@ function NotesPage() {
 
       </div>
       <div>
-        <NoteList notes={notes} />
+        <NoteList notes={notes} deleteNote={deleteNote}/>
       </div>
     </main>
   )
