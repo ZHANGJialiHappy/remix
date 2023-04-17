@@ -29,10 +29,9 @@ function NoteCard({ note, index }: Props) {
           </ul>
         </header>
         <h2 className="card-title">{note.title}</h2>
-        <div className="overflow-y-scroll h-32">
+        <div className="overflow-scroll h-32">
           <p>{note.content}</p>
         </div>
-        {/* scroll in y */}
         <div className="absolute card-actions right-8 bottom-8">
           <button className="btn btn-outline btn-warning">see more</button>
         </div>

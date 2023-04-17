@@ -12,14 +12,6 @@ function NotesPage() {
   const [content, setContent] = useState<string>("");
   const [notes, setNotes] = useState<NoteState[]>([]);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    if (event.target.name === "Title") {
-      setTitle(event.target.value)
-    } else {
-      setContent(event.target.value)
-    };
-  };
-
   const addNote = (e: React.SyntheticEvent<HTMLFormElement>): void => {
     e.preventDefault();
     debugger;
@@ -43,23 +35,23 @@ function NotesPage() {
           </label>
           <input 
           type="text" 
-          placeholder="Type here" 
+          placeholder="Max 10 charactors" 
           name="Title" 
+          maxLength={10}
           className="input input-bordered input-warning w-80 max-w-xs" 
-          onChange={handleChange} 
+          onChange={(event: ChangeEvent<HTMLInputElement>): void => {setTitle(event.target.value)}} 
           value={title}/>
           <label className="label">
             <span className="label-text">Content</span>
           </label>
-          <input
+          <textarea             
             name="Content"
             placeholder="Write your notes here&#10;No matter how much content you want to write"
             className="textarea textarea-warning w-full"
-            onChange={handleChange}
-            value={content}
-            />
+            onChange={(event: ChangeEvent<HTMLTextAreaElement>): void => {setContent(event.target.value)}} 
+            value={content}></textarea>
             {/* textarea */}
-            
+
           <div className="card-actions justify-end absolute bottom-8 right-8">
             <button className="btn btn-outline btn-warning">Add note</button>
           </div>
