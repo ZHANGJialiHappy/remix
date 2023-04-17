@@ -10,7 +10,7 @@ the note application in my computer
 
 ## Demo
 
-Check my application on [`gh-pages`]().
+Have a look the ![demo screenshot](demoPicture.jpg).
 
 ## Steps
 
