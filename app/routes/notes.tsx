@@ -5,7 +5,7 @@ import background from '../pic/sidePic.jpeg';
 export type NoteState = {
   title: string;
   content: string;
-  id: number;
+  id: string;
 }
 function NotesPage() {
   const [title, setTitle] = useState<string>("");
@@ -26,7 +26,7 @@ function NotesPage() {
     if ((!title || /^\s*$/.test(title)) || (!content || /^\s*$/.test(content))) {
       return
     }
-    const newNote = { title, content, id: Math.random() }
+    const newNote = { title, content, id: ` ${new Date()}` }
     const newNoteList = [newNote, ...notes];
     setNotes(newNoteList);
     setTitle("");
@@ -58,6 +58,8 @@ function NotesPage() {
             onChange={handleChange}
             value={content}
             />
+            {/* textarea */}
+            
           <div className="card-actions justify-end absolute bottom-8 right-8">
             <button className="btn btn-outline btn-warning">Add note</button>
           </div>
