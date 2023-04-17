@@ -10,7 +10,7 @@ the note application in my computer
 
 ## Demo
 
-Have a look the demo screenshot. ![](demoPicture.jpg).
+Have a look the demo screenshot. ![](demoPicture.jpg)
 
 ## Steps
 
