@@ -1,16 +1,25 @@
-# Welcome to Remix!
+## Inspired by
+the note application in my computer
 
-- [Remix Docs](https://remix.run/docs)
+## Stack
 
-## Development
+1. TypeScript
+2. Remix
+3. Tailwind CSS
+4. DaisyUI
 
-From your terminal:
+## Demo
 
-```sh
-npm run dev
-```
+Check my application on [`gh-pages`]().
 
-This starts your app in development mode, rebuilding assets on file changes.
+## Steps
+
+1. Create Remix project with TypeScript
+2. Install Tailwind CSS and DaisyUI
+3. Create index home page
+4. Create MainNavigation component
+5. Create notes page 
+6. Create Notelist component
 
 ## Deployment
 
