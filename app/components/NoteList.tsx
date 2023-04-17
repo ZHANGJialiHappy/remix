@@ -15,7 +15,7 @@ function NoteList({ notes, deleteNote }: Props) {
                     className="relative card w-96 h-80 bg-yellow-100 bg-base-100 shadow-xl hover:shadow-[0_2.188rem_3.75rem_-0.938rem_rgba(0,0,0,0.5)]">
                         <div className="card-body">
                             <header>
-                                <ul className="card-actions">
+                                <ul className="card-actions items-end">
                                     <li className="grow">#{index + 1}</li>
                                     <li>
                                         <time dateTime={note.id}>
@@ -36,11 +36,8 @@ function NoteList({ notes, deleteNote }: Props) {
                                 </ul>
                             </header>
                             <h2 className="card-title">{note.title}</h2>
-                            <div className="overflow-scroll h-32">
+                            <div className="overflow-scroll h-44">
                                 <p>{note.content}</p>
-                            </div>
-                            <div className="absolute card-actions right-8 bottom-8">
-                                <button className="btn btn-outline btn-warning">see more</button>
                             </div>
                         </div>
                     </div>
